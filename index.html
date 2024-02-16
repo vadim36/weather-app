@@ -7,5 +7,42 @@
     <title>Weather App</title>
   </head>
   <body>
+    <header class="flex bg-sky-500 text-white p-3 justify-between">
+      <a data-location-link 
+        class="text-center text-5xl font-bold flex items-center
+        bg-sky-600 rounded px-5 cursor-pointer">
+        Москва
+        <input type="image" src="public/arrow-down.svg" 
+        alt="arrow icon" class="size-20"
+        data-check-location-button>
+      </a>
+      <button data-account-button class="button font-semibold self-center text-2xl">
+        Аккаунт
+      </button>
+    </header>
+
+    <main>
+      <section aria-label="Main Weather info" class="flex flex-col items-center 
+      bg-sky-400 text-white gap-3 font-mono p-5">
+        <img src="public/weather.svg" alt="Weather Icon" data-weather-icon
+          class="size-64">
+        <h2 data-weather-temp class="after:content-['°C'] text-8xl font-bold">10</h2>
+        <h3 data-weather-body class="text-4xl font-semibold">Облачно</h3>
+        <button data-extra-info class="font-semibold text-4xl button">
+          Дополнительная информация
+        </button>
+      </section>
+
+      <section aria-label="Next days info">
+        <div class="flex items-center">
+          <h2 class="font-mono text-5xl">Сегодня</h2>
+          <input type="image" src="public/arrow-down.svg" 
+          alt="arrow icon" class="size-20 rotate-[270deg]"
+          data-check-location-button>
+        </div>
+      </section>
+
+    </main>
+
   </body>
 </html>

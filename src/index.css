@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .button {
+    @apply bg-sky-700 rounded-xl p-3 hover:bg-sky-800 relative active:top-1;
+  }
+}
