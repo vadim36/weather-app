@@ -49,3 +49,23 @@ interface Weather {
     speed: number
   }
 }
+
+interface WeatherData {
+  city: {
+    coord: {
+      lat: number,
+      lon: number
+    },
+    country: string,
+    id: number,
+    name: string,
+    population: number,
+    sunrise: number,
+    sunset: number,
+    timezone: number
+  },
+  cnt: number,
+  cod: string,
+  list: Weather[],
+  message: 0
+}

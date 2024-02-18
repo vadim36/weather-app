@@ -19,9 +19,10 @@ export default class WeatherService {
     return coordinates[0]
   }
   
-  static async getWeather({ lat, lon }: Coordinates):Promise<Weather[] | void> {
+  static async getWeather({ lat, lon }: Coordinates):Promise<Weather[] | void> {    
     return await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}`)
-      .then((response: Response):Promise<Weather[]> => response.json())
+      .then((response: Response):Promise<any> => response.json())
+      .then((response: WeatherData):Weather[] => response?.list)
       .catch((reject):void => console.log(reject))
   }
 }
