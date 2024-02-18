@@ -6,23 +6,56 @@
     <script type="module" src="./src/index.ts" defer></script>
     <title>Weather App</title>
   </head>
-  <body>
-    <header class="flex bg-sky-500 text-white p-3 justify-between">
-      <label class="text-3xl font-bold flex">
-        <input type="text" class="w-52 px-3 text-black
-        outline-2 outline rounded-lg" placeholder="Поиск...">
+  <body class="h-dvh flex flex-col">
+    <header class="bg-sky-500 text-white p-3 flex justify-between
+    ">
+      <input type="image" src="public/search.svg" alt="search icon"
+        class="size-14 hover:invert ease-in duration-75 sm:hidden" data-button-show-location-form>
+      <button class="button text-xl font-semibold">Аккаунт</button>
+      
+      <form class="text-2xl hidden absolute bg-sky-500 p-3
+      rounded outline outline-black animate-slide-top" 
+      data-form-location aria-hidden="true">
+        <input type="text" class="px-3 text-black
+        outline-2 outline rounded-lg h-12 w-52">
         <input type="image" src="public/location.svg" 
         alt="arrow icon" class="size-12 hover:invert ease-in 
-        duration-75"
-        data-get-location-button>
-      </label>
-
-      <button data-account-button class="button font-semibold self-center text-xl">
-        Аккаунт
-      </button>
+        duration-75">
+        <input type="image" src="public/search.svg" alt="search icon"
+        class="size-14 hover:invert ease-in duration-75 sm:hidden">
+      </form>
     </header>
+    
+    <main class="flex-1">
+      <section aria-label="Загрузка контента" 
+        class="flex flex-col items-center gap-5 h-full pt-3 relative -z-20 bg-sky-600">
+        <h2 class="font-mono font-bold text-white text-4xl">
+          Введите место...
+        </h2>
+        <div class="size-20 rounded-full outline-4 outline-blue-800
+        outline-dashed animate-spin flex items-center justify-center">
+          <div class="size-16 rounded-full outline-4 outline-blue-800
+          outline-dashed animate-pulse">
+        </div>
+      </section>
+    </main>
 
-    <main>
+
+    <!--
+
+    <main class="flex-1">
+      <section aria-label="Загрузка контента" 
+        class="flex flex-col items-center gap-5 bg-sky-600 h-full pt-3">
+        <h2 class="font-mono font-bold text-white text-4xl">
+          Введите место...
+        </h2>
+        <div class="size-20 rounded-full outline-4 outline-blue-800
+        outline-dashed animate-spin flex items-center justify-center">
+          <div class="size-16 rounded-full outline-4 outline-blue-800
+          outline-dashed animate-pulse">
+        </div>
+      </section>-->
+
       <!--<section aria-label="Main Weather info" class="flex flex-col items-center 
       bg-sky-400 text-white gap-3 font-mono p-5">
         <img src="public/weather.svg" alt="Weather Icon" data-weather-icon
