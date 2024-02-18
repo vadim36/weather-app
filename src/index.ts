@@ -23,3 +23,14 @@ $buttonShowLocationForm!.addEventListener('click', ():void => {
   $formLocation?.classList.add('hidden')
   return $formLocation?.classList.remove('flex')
 })
+
+$formLocation?.addEventListener('submit', async (event: Event)
+:Promise<void> => {
+  event.preventDefault()
+  const cityName = ($formLocation as HTMLFormElement)
+    .locationInput.value
+
+  const coordinates = await WeatherService.getCoordinates(cityName)
+  const weatherData = await WeatherService.getWeather(coordinates)
+  return console.log(weatherData)
+})
